@@ -105,16 +105,6 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Menu Content */}
             <div className="flex-1 flex flex-col items-center justify-center px-6">
-              {/* Brand */}
-              <Link to="/" onClick={() => setMenuOpen(false)} className="mb-10 text-center">
-                <h2 className="font-display text-3xl sm:text-4xl font-bold text-primary leading-tight">
-                  Aroma Flowers Corner
-                </h2>
-                <p className="text-sm sm:text-base font-display italic text-primary/70 tracking-wide mt-1">
-                  Flowers by Kirti · Nagpur
-                </p>
-              </Link>
-
               {/* Navigation Links */}
               <nav className="flex flex-col items-center gap-5">
                 {navLinks.map((link) => (
@@ -137,9 +127,6 @@ export default function Layout({ children }: LayoutProps) {
                   <Clock className="w-3.5 h-3.5" />
                   <span>Open daily · 9 AM – 10 PM</span>
                 </div>
-                <p className="text-[9px] tracking-[0.3em] uppercase text-muted-foreground">
-                  Nagpur · Est 2018
-                </p>
               </div>
             </div>
           </div>
@@ -181,9 +168,6 @@ export default function Layout({ children }: LayoutProps) {
         >
           <MessageCircle className="w-4 h-4" />
         </a>
-        <span className="text-[9px] tracking-[0.3em] uppercase text-muted-foreground rotate-90 whitespace-nowrap mt-2">
-          Nagpur · Est 2018
-        </span>
       </div>
 
       {/* Mobile bottom bar - 3 columns (the "3-line section") */}

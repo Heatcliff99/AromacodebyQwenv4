@@ -56,7 +56,7 @@ export default function Home() {
   return (
     <div className="w-full overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative w-full h-[85vh] sm:h-[88vh] min-h-[480px] sm:min-h-[560px] max-h-[800px] overflow-hidden">
+      <section className="relative w-full h-[75vh] sm:h-[80vh] min-h-[420px] sm:min-h-[500px] max-h-[700px] overflow-hidden">
         <div className="absolute inset-0">
           <span className="inline-block relative w-full h-full">
             <img
@@ -108,13 +108,11 @@ export default function Home() {
       </section>
 
       {/* Featured Product Section */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-5 lg:px-10 py-12 sm:py-20 lg:py-28">
+      <section className="mx-auto max-w-7xl px-4 sm:px-5 lg:px-10 py-8 sm:py-12 lg:py-16">
         <div>
-          <div className="flex items-end justify-between mb-6 sm:mb-10">
-            <div>
-              <p className="text-[10px] sm:text-xs tracking-[0.3em] uppercase text-muted-foreground mb-2">This Season's Pick</p>
-              <h2 className="font-display text-2xl sm:text-4xl lg:text-5xl text-primary">A bloom worth the wait</h2>
-            </div>
+          <div className="text-center mb-6 sm:mb-10">
+            <p className="text-[10px] sm:text-xs tracking-[0.3em] uppercase text-muted-foreground mb-2">This Season's Pick</p>
+            <h2 className="font-display text-2xl sm:text-4xl lg:text-5xl text-primary">A bloom worth the wait</h2>
           </div>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-10 lg:gap-16 items-center">
@@ -164,7 +162,7 @@ export default function Home() {
 
       {/* About Section */}
       <section className="bg-secondary/20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-5 lg:px-10 py-12 sm:py-20 lg:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-5 lg:px-10 py-8 sm:py-12 lg:py-16">
           <div className="grid sm:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center">
             <div className="order-2 sm:order-1">
               <p className="text-[10px] sm:text-xs tracking-[0.3em] uppercase text-muted-foreground mb-2 sm:mb-3">The Season's Edit</p>
@@ -201,16 +199,14 @@ export default function Home() {
       </section>
 
       {/* Product Grid */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-5 lg:px-10 py-12 sm:py-20 lg:py-28">
+      <section className="mx-auto max-w-7xl px-4 sm:px-5 lg:px-10 py-8 sm:py-12 lg:py-16">
         <div>
-          <div className="flex items-end justify-between mb-6 sm:mb-10">
-            <div>
-              <p className="text-[10px] sm:text-xs tracking-[0.3em] uppercase text-muted-foreground mb-2">In Season Now</p>
-              <h2 className="font-display text-2xl sm:text-4xl lg:text-5xl text-primary">The Curated Collection</h2>
-            </div>
+          <div className="text-center mb-6 sm:mb-10">
+            <p className="text-[10px] sm:text-xs tracking-[0.3em] uppercase text-muted-foreground mb-2">In Season Now</p>
+            <h2 className="font-display text-2xl sm:text-4xl lg:text-5xl text-primary">The Curated Collection</h2>
             <Link
               to="/shop"
-              className="hidden sm:inline-flex items-center gap-2 text-sm text-primary hover:gap-3 transition-all"
+              className="hidden sm:inline-flex items-center justify-center gap-2 text-sm text-primary hover:gap-3 transition-all mt-3"
             >
               View all <ArrowRight className="w-4 h-4" />
             </Link>
@@ -273,7 +269,7 @@ export default function Home() {
           </span>
           <div className="absolute inset-0 bg-primary/70" />
         </div>
-        <div className="relative mx-auto max-w-3xl px-4 sm:px-5 py-16 sm:py-28 lg:py-36 text-center text-primary-foreground">
+        <div className="relative mx-auto max-w-3xl px-4 sm:px-5 py-12 sm:py-16 lg:py-20 text-center text-primary-foreground">
           <div>
             <p className="text-[10px] sm:text-xs tracking-[0.3em] uppercase text-primary-foreground/70 mb-3 sm:mb-4">The Petal & Stem Atelier</p>
             <h2 className="font-display text-2xl sm:text-4xl lg:text-6xl leading-tight mb-4 sm:mb-6">
@@ -294,7 +290,7 @@ export default function Home() {
 
       {/* Testimonials */}
       <section className="bg-secondary/15">
-        <div className="mx-auto max-w-4xl px-4 sm:px-5 lg:px-10 py-12 sm:py-20 lg:py-28 text-center">
+        <div className="mx-auto max-w-4xl px-4 sm:px-5 lg:px-10 py-8 sm:py-12 lg:py-16 text-center">
           <p className="text-[10px] sm:text-xs tracking-[0.3em] uppercase text-muted-foreground mb-6 sm:mb-8">Kind Words</p>
           <div className="relative min-h-[160px] sm:min-h-[180px]">
             <div>
@@ -325,7 +321,7 @@ export default function Home() {
       </section>
 
       {/* Instagram Feed */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-5 lg:px-10 py-12 sm:py-20 lg:py-24">
+      <section className="mx-auto max-w-7xl px-4 sm:px-5 lg:px-10 py-8 sm:py-12 lg:py-16">
         <div>
           <div className="text-center mb-6 sm:mb-10">
             <p className="text-[10px] sm:text-xs tracking-[0.3em] uppercase text-muted-foreground mb-2">From our community</p>
