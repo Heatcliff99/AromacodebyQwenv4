@@ -6,23 +6,20 @@ import { products, testimonials } from '../data/products';
 const heroSlides = [
   {
     subtitle: 'Varmalas & Wedding Garlands',
-    title: 'Aroma Flowers Corner',
-    brandSubtitle: 'Flowers by Kirti · Nagpur',
-    description: 'Threads of marigold, woven for the day you remember forever. A women-owned floral atelier in Nagpur. Hand-tied bouquets, varmalas, floral jewellery and event décor — composed by hand, since 2018.',
+    title: 'Threads of Marigold',
+    description: 'Woven for the day you remember forever. A women-owned floral atelier in Nagpur. Hand-tied bouquets, varmalas, floral jewellery and event décor — composed by hand, since 2018.',
     image: 'https://image.qwenlm.ai/generated-images/3f754a0b-91e0-47ba-b82a-cbaf6642cd88/_result.png'
   },
   {
     subtitle: 'Hand-Tied Bouquets',
-    title: 'Aroma Flowers Corner',
-    brandSubtitle: 'Flowers by Kirti · Nagpur',
-    description: 'Every stem placed with intention. Every bouquet, a keepsake. From our atelier in Nagpur to your doorstep — fresh blooms composed by hand, wrapped like a gift.',
+    title: 'Every Stem Placed with Intention',
+    description: 'Every bouquet, a keepsake. From our atelier in Nagpur to your doorstep — fresh blooms composed by hand, wrapped like a gift.',
     image: 'https://image.qwenlm.ai/generated-images/3cf0bc76-4f84-4966-b859-7ed52935c40e/_result.png'
   },
   {
     subtitle: 'Event Décor',
-    title: 'Aroma Flowers Corner',
-    brandSubtitle: 'Flowers by Kirti · Nagpur',
-    description: 'Grand florals for the moments that matter most. Mandap, entrance, stage and car décor — we bring your vision to life, bloom by bloom.',
+    title: 'Grand Florals for Grand Moments',
+    description: 'Mandap, entrance, stage and car décor — we bring your vision to life, bloom by bloom.',
     image: 'https://image.qwenlm.ai/generated-images/f1fec2c1-f542-4b40-9ad2-9ef569bee7ea/_result.png'
   }
 ];
@@ -79,9 +76,6 @@ export default function Home() {
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.1] sm:leading-[1.05] text-primary font-bold">
               {heroSlides[currentSlide].title}
             </h1>
-            <p className="mt-2 sm:mt-3 text-base sm:text-lg md:text-xl font-display italic text-primary/80 tracking-wide">
-              {heroSlides[currentSlide].brandSubtitle}
-            </p>
             <p className="mt-4 sm:mt-6 text-sm sm:text-base text-foreground/70 max-w-md leading-relaxed">
               {heroSlides[currentSlide].description}
             </p>

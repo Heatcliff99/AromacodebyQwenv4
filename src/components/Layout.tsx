@@ -22,18 +22,31 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <>
       <main className="min-h-screen pb-16 lg:pb-0">
-        {/* Hamburger Menu Button - Top Right */}
-        <button
-          onClick={() => setMenuOpen(true)}
-          className="fixed top-5 right-5 z-50 w-11 h-11 rounded-full border border-border bg-background/90 backdrop-blur flex items-center justify-center text-primary hover:bg-secondary/30 transition-colors"
-          aria-label="Open menu"
-        >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="4" y1="6" x2="20" y2="6" />
-            <line x1="4" y1="12" x2="20" y2="12" />
-            <line x1="4" y1="18" x2="20" y2="18" />
-          </svg>
-        </button>
+        {/* Brand Header */}
+        <header className="relative z-40 bg-background/95 backdrop-blur-md border-b border-border">
+          <div className="mx-auto max-w-7xl px-5 lg:px-10 py-4 flex items-center justify-between">
+            <div className="flex-1">
+              <h1 className="font-display text-2xl sm:text-3xl font-bold text-primary leading-tight">
+                Aroma Flowers Corner
+              </h1>
+              <p className="text-xs sm:text-sm font-display italic text-primary/70 tracking-wide mt-0.5">
+                Flowers by Kirti · Nagpur
+              </p>
+            </div>
+            {/* Hamburger Menu Button - Top Right */}
+            <button
+              onClick={() => setMenuOpen(true)}
+              className="w-11 h-11 rounded-full border border-border bg-background flex items-center justify-center text-primary hover:bg-secondary/30 transition-colors"
+              aria-label="Open menu"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="4" y1="6" x2="20" y2="6" />
+                <line x1="4" y1="12" x2="20" y2="12" />
+                <line x1="4" y1="18" x2="20" y2="18" />
+              </svg>
+            </button>
+          </div>
+        </header>
 
         {/* Full-screen Menu Overlay */}
         {menuOpen && (
@@ -51,8 +64,12 @@ export default function Layout({ children }: LayoutProps) {
             <div className="flex-1 flex flex-col items-center justify-center px-6">
               {/* Brand */}
               <Link to="/" onClick={() => setMenuOpen(false)} className="mb-10 text-center">
-                <span className="font-display text-3xl text-primary">Aroma</span>
-                <p className="text-[9px] tracking-[0.3em] uppercase text-muted-foreground mt-1">Flowers Corner</p>
+                <h2 className="font-display text-3xl sm:text-4xl font-bold text-primary leading-tight">
+                  Aroma Flowers Corner
+                </h2>
+                <p className="text-sm sm:text-base font-display italic text-primary/70 tracking-wide mt-1">
+                  Flowers by Kirti · Nagpur
+                </p>
               </Link>
 
               {/* Navigation Links */}
