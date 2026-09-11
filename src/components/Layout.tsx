@@ -134,51 +134,51 @@ export default function Layout({ children }: LayoutProps) {
 
         {children}
 
-        {/* Footer - Four Column Layout */}
-        <footer className="border-t border-border mt-0 bg-background">
+        {/* Footer - Dark Pink/Magenta Background */}
+        <footer className="border-t border-border mt-0" style={{ backgroundColor: '#c2185b' }}>
           <div className="mx-auto max-w-7xl px-5 lg:px-10 py-12 lg:py-16">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
               {/* Column 1: Brand Info */}
               <div className="space-y-4">
-                <h3 className="font-display text-2xl font-bold text-primary">Aroma Flowers Corner</h3>
-                <p className="text-sm text-foreground/70 leading-relaxed">
+                <h3 className="font-display text-2xl font-bold text-white">Aroma Flowers Corner</h3>
+                <p className="text-sm text-white/90 leading-relaxed">
                   A women-owned floral atelier in Nagpur, composing bouquets that mark a memory – since 2018
                 </p>
-                <p className="text-sm italic text-foreground/60 font-display">
+                <p className="text-sm italic text-white/80 font-display">
                   "Where every bloom tells a story of fleeting beauty"
                 </p>
-                <p className="text-xs text-muted-foreground pt-4">
+                <p className="text-xs text-white/70 pt-4">
                   © 2026 Aroma Flowers Corner - Flowers by Kirti. All rights reserved
                 </p>
               </div>
 
               {/* Column 2: Explore */}
               <div>
-                <h4 className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">Explore</h4>
+                <h4 className="text-xs tracking-[0.3em] uppercase text-white/70 mb-4">Explore</h4>
                 <ul className="space-y-2.5">
-                  <li><Link to="/shop" className="text-sm text-foreground/70 hover:text-primary transition-colors">Collection</Link></li>
-                  <li><Link to="/customise" className="text-sm text-foreground/70 hover:text-primary transition-colors">Customise</Link></li>
-                  <li><Link to="/occasions" className="text-sm text-foreground/70 hover:text-primary transition-colors">Occasions & Festivals</Link></li>
-                  <li><Link to="/journal" className="text-sm text-foreground/70 hover:text-primary transition-colors">Journal</Link></li>
-                  <li><Link to="/contact" className="text-sm text-foreground/70 hover:text-primary transition-colors">Contact</Link></li>
-                  <li><Link to="/signin" className="text-sm text-foreground/70 hover:text-primary transition-colors">Sign In</Link></li>
-                  <li><Link to="/delivery" className="text-sm text-foreground/70 hover:text-primary transition-colors">Book a Delivery</Link></li>
+                  <li><Link to="/shop" className="text-sm text-white/90 hover:text-white transition-colors">Collection</Link></li>
+                  <li><Link to="/customise" className="text-sm text-white/90 hover:text-white transition-colors">Customise</Link></li>
+                  <li><Link to="/occasions" className="text-sm text-white/90 hover:text-white transition-colors">Occasions & Festivals</Link></li>
+                  <li><Link to="/journal" className="text-sm text-white/90 hover:text-white transition-colors">Journal</Link></li>
+                  <li><Link to="/contact" className="text-sm text-white/90 hover:text-white transition-colors">Contact</Link></li>
+                  <li><Link to="/signin" className="text-sm text-white/90 hover:text-white transition-colors">Sign In</Link></li>
+                  <li><Link to="/delivery" className="text-sm text-white/90 hover:text-white transition-colors">Book a Delivery</Link></li>
                 </ul>
               </div>
 
               {/* Column 3: Our Shops */}
               <div>
-                <h4 className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">Our Shops</h4>
+                <h4 className="text-xs tracking-[0.3em] uppercase text-white/70 mb-4">Our Shops</h4>
                 <div className="space-y-4">
                   <div>
-                    <p className="text-sm font-medium text-foreground mb-1">Manish Nagar</p>
-                    <p className="text-xs text-foreground/60 leading-relaxed">
+                    <p className="text-sm font-medium text-white mb-1">Manish Nagar</p>
+                    <p className="text-xs text-white/80 leading-relaxed">
                       Shop No 10, 11, Manik Park, opposite Union Bank of India, Santaji Society, Manish Nagar, Somalwada, Nagpur, Maharashtra 440037
                     </p>
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-foreground mb-1">Khamla</p>
-                    <p className="text-xs text-foreground/60 leading-relaxed">
+                    <p className="text-sm font-medium text-white mb-1">Khamla</p>
+                    <p className="text-xs text-white/80 leading-relaxed">
                       Kalash Complex, Gulmohar Hall, Near Gulmohar Hall, Pande Layout, Khamla, Nagpur, Maharashtra
                     </p>
                   </div>
@@ -187,25 +187,25 @@ export default function Layout({ children }: LayoutProps) {
 
               {/* Column 4: Reach Us */}
               <div>
-                <h4 className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">Reach Us</h4>
+                <h4 className="text-xs tracking-[0.3em] uppercase text-white/70 mb-4">Reach Us</h4>
                 <ul className="space-y-2.5">
                   <li>
-                    <a href="tel:+919923106684" className="text-sm text-foreground/70 hover:text-primary transition-colors flex items-center gap-2">
+                    <a href="tel:+919923106684" className="text-sm text-white/90 hover:text-white transition-colors flex items-center gap-2">
                       <Phone className="w-3.5 h-3.5" /> +91 99231 06684
                     </a>
                   </li>
                   <li>
-                    <a href="https://wa.me/919923106684" target="_blank" rel="noreferrer" className="text-sm text-foreground/70 hover:text-primary transition-colors flex items-center gap-2">
+                    <a href="https://wa.me/919923106684" target="_blank" rel="noreferrer" className="text-sm text-white/90 hover:text-white transition-colors flex items-center gap-2">
                       <MessageCircle className="w-3.5 h-3.5" /> WhatsApp
                     </a>
                   </li>
                   <li>
-                    <a href="https://instagram.com/aromaflowerscorner" target="_blank" rel="noreferrer" className="text-sm text-foreground/70 hover:text-primary transition-colors">
+                    <a href="https://instagram.com/aromaflowerscorner" target="_blank" rel="noreferrer" className="text-sm text-white/90 hover:text-white transition-colors">
                       @aromaflowerscorner
                     </a>
                   </li>
                   <li className="pt-2">
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                    <div className="flex items-center gap-2 text-xs text-white/80">
                       <Clock className="w-3.5 h-3.5" />
                       <span>Open daily · 9:00 AM – 10:00 PM</span>
                     </div>
@@ -215,8 +215,8 @@ export default function Layout({ children }: LayoutProps) {
             </div>
 
             {/* Bottom Slogan */}
-            <div className="mt-12 pt-8 border-t border-border text-center">
-              <p className="font-display text-lg sm:text-xl text-primary font-medium">
+            <div className="mt-12 pt-8 border-t border-white/20 text-center">
+              <p className="font-display text-lg sm:text-xl text-white font-medium">
                 Best Florist & Event Décor in Nagpur
               </p>
             </div>

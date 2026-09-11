@@ -288,71 +288,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="bg-secondary/15">
-        <div className="mx-auto max-w-4xl px-4 sm:px-5 lg:px-10 py-8 sm:py-12 lg:py-16 text-center">
-          <p className="text-[10px] sm:text-xs tracking-[0.3em] uppercase text-muted-foreground mb-6 sm:mb-8">Kind Words</p>
-          <div className="relative min-h-[160px] sm:min-h-[180px]">
-            <div>
-              <div className="flex justify-center gap-1 mb-4 sm:mb-5">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-secondary text-secondary" />
-                ))}
-              </div>
-              <p className="font-display text-xl sm:text-2xl lg:text-3xl text-primary leading-relaxed italic">
-                {testimonials[currentTestimonial].text}
-              </p>
-              <p className="mt-4 sm:mt-6 text-xs sm:text-sm tracking-wide text-foreground/70">
-                {testimonials[currentTestimonial].author} · <span className="text-muted-foreground">{testimonials[currentTestimonial].occasion}</span>
-              </p>
-            </div>
-          </div>
-          <div className="flex justify-center gap-2 mt-6 sm:mt-8">
-            {testimonials.map((_, i) => (
-              <button
-                key={i}
-                className={`h-1 transition-all duration-500 ${i === currentTestimonial ? 'w-5 sm:w-6 bg-primary' : 'w-2 bg-primary/25'}`}
-                onClick={() => setCurrentTestimonial(i)}
-                aria-label={`Testimonial ${i + 1}`}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Instagram Feed */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-5 lg:px-10 py-8 sm:py-12 lg:py-16">
-        <div>
-          <div className="text-center mb-6 sm:mb-10">
-            <p className="text-[10px] sm:text-xs tracking-[0.3em] uppercase text-muted-foreground mb-2">From our community</p>
-            <h2 className="font-display text-xl sm:text-3xl lg:text-4xl text-primary">@aromaflowerscorner</h2>
-          </div>
-        </div>
-        <div>
-          <a
-            href="https://instagram.com/aromaflowerscorner"
-            target="_blank"
-            rel="noreferrer"
-            className="grid grid-cols-3 md:grid-cols-6 gap-1 sm:gap-2"
-          >
-            {instagramImages.map((img, i) => (
-              <div key={i} className="relative aspect-square overflow-hidden bg-muted group">
-                <span className="inline-block relative w-full h-full transition-transform duration-700 group-hover:scale-110">
-                  <img
-                    src={img}
-                    loading="lazy"
-                    className="w-full h-full inset-0 absolute object-cover"
-                    alt="Instagram post"
-                  />
-                </span>
-                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/30 transition-colors flex items-center justify-center">
-                  <Instagram className="w-5 h-5 sm:w-6 sm:h-6 text-background opacity-0 group-hover:opacity-100 transition-opacity" />
-                </div>
-              </div>
-            ))}
-          </a>
-        </div>
-      </section>
     </div>
   );
 }
