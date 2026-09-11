@@ -22,18 +22,74 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <>
       <main className="min-h-screen pb-16 lg:pb-0">
-        {/* Hamburger Menu Button - Top Right */}
-        <button
-          onClick={() => setMenuOpen(true)}
-          className="fixed top-5 right-5 z-50 w-11 h-11 rounded-full border border-border bg-background/90 backdrop-blur flex items-center justify-center text-primary hover:bg-secondary/30 transition-colors"
-          aria-label="Open menu"
-        >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="4" y1="6" x2="20" y2="6" />
-            <line x1="4" y1="12" x2="20" y2="12" />
-            <line x1="4" y1="18" x2="20" y2="18" />
-          </svg>
-        </button>
+        {/* Brand Header */}
+        <header className="relative z-40 bg-background/95 backdrop-blur-md border-b border-border overflow-hidden">
+          <div className="mx-auto max-w-7xl px-5 lg:px-10 py-4 flex items-center justify-between relative">
+            {/* Left Floral Decoration */}
+            <div className="hidden sm:flex items-center gap-2 text-primary/30">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 2C12 2 8 6 8 10C8 12 9 14 12 14C15 14 16 12 16 10C16 6 12 2 12 2Z" />
+                <path d="M12 14V22" />
+                <path d="M9 18C9 18 10 16 12 16C14 16 15 18 15 18" />
+              </svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="3" />
+                <path d="M12 2V5" />
+                <path d="M12 19V22" />
+                <path d="M2 12H5" />
+                <path d="M19 12H22" />
+                <path d="M4.93 4.93L7.05 7.05" />
+                <path d="M16.95 16.95L19.07 19.07" />
+                <path d="M4.93 19.07L7.05 16.95" />
+                <path d="M16.95 7.05L19.07 4.93" />
+              </svg>
+            </div>
+
+            {/* Centered Brand Name */}
+            <div className="flex-1 text-center">
+              <h1 className="font-display text-2xl sm:text-3xl font-bold text-primary leading-tight">
+                Aroma Flowers Corner
+              </h1>
+              <p className="text-xs sm:text-sm font-display italic text-primary/70 tracking-wide mt-0.5">
+                Flowers by Kirti · Nagpur
+              </p>
+            </div>
+
+            {/* Right Floral Decoration & Menu Button */}
+            <div className="flex items-center gap-3">
+              <div className="hidden sm:flex items-center gap-2 text-primary/30">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="3" />
+                  <path d="M12 2V5" />
+                  <path d="M12 19V22" />
+                  <path d="M2 12H5" />
+                  <path d="M19 12H22" />
+                  <path d="M4.93 4.93L7.05 7.05" />
+                  <path d="M16.95 16.95L19.07 19.07" />
+                  <path d="M4.93 19.07L7.05 16.95" />
+                  <path d="M16.95 7.05L19.07 4.93" />
+                </svg>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 2C12 2 8 6 8 10C8 12 9 14 12 14C15 14 16 12 16 10C16 6 12 2 12 2Z" />
+                  <path d="M12 14V22" />
+                  <path d="M9 18C9 18 10 16 12 16C14 16 15 18 15 18" />
+                </svg>
+              </div>
+              {/* Hamburger Menu Button */}
+              <button
+                onClick={() => setMenuOpen(true)}
+                className="w-11 h-11 rounded-full border border-border bg-background flex items-center justify-center text-primary hover:bg-secondary/30 transition-colors"
+                aria-label="Open menu"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="4" y1="6" x2="20" y2="6" />
+                  <line x1="4" y1="12" x2="20" y2="12" />
+                  <line x1="4" y1="18" x2="20" y2="18" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </header>
 
         {/* Full-screen Menu Overlay */}
         {menuOpen && (
@@ -49,12 +105,6 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Menu Content */}
             <div className="flex-1 flex flex-col items-center justify-center px-6">
-              {/* Brand */}
-              <Link to="/" onClick={() => setMenuOpen(false)} className="mb-10 text-center">
-                <span className="font-display text-3xl text-primary">Aroma</span>
-                <p className="text-[9px] tracking-[0.3em] uppercase text-muted-foreground mt-1">Flowers Corner</p>
-              </Link>
-
               {/* Navigation Links */}
               <nav className="flex flex-col items-center gap-5">
                 {navLinks.map((link) => (
@@ -77,9 +127,6 @@ export default function Layout({ children }: LayoutProps) {
                   <Clock className="w-3.5 h-3.5" />
                   <span>Open daily · 9 AM – 10 PM</span>
                 </div>
-                <p className="text-[9px] tracking-[0.3em] uppercase text-muted-foreground">
-                  Nagpur · Est 2018
-                </p>
               </div>
             </div>
           </div>
@@ -87,16 +134,90 @@ export default function Layout({ children }: LayoutProps) {
 
         {children}
 
-        {/* Footer - simple, matching original style */}
-        <footer className="border-t border-border mt-0">
-          <div className="mx-auto max-w-7xl px-5 lg:px-10 py-8 lg:py-10">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                <Clock className="w-3.5 h-3.5" />
-                <span>Open daily · 9:00 AM – 10:00 PM</span>
+        {/* Footer - Dark Pink/Magenta Background with Spacious Layout */}
+        <footer className="border-t border-border mt-0" style={{ backgroundColor: '#c2185b' }}>
+          <div className="mx-auto max-w-7xl px-6 lg:px-10 py-16 lg:py-24">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
+              {/* Column 1: Brand Info */}
+              <div className="space-y-6">
+                <h3 className="font-display text-2xl lg:text-3xl font-bold text-white">Aroma Flowers Corner</h3>
+                <p className="text-sm lg:text-base text-white/90 leading-relaxed">
+                  A women-owned floral atelier in Nagpur, composing bouquets that mark a memory – since 2018
+                </p>
+                <p className="text-sm lg:text-base italic text-white/80 font-display leading-relaxed">
+                  "Where every bloom tells a story of fleeting beauty"
+                </p>
+                <p className="text-xs lg:text-sm text-white/70 pt-6">
+                  © 2026 Aroma Flowers Corner - Flowers by Kirti. All rights reserved
+                </p>
               </div>
-              <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
-                © 2024 Aroma Flowers Corner · Nagpur · Women-owned · Est 2018
+
+              {/* Column 2: Explore */}
+              <div>
+                <h4 className="text-xs tracking-[0.3em] uppercase text-white/70 mb-6">Explore</h4>
+                <ul className="space-y-4">
+                  <li><Link to="/shop" className="text-sm lg:text-base text-white/90 hover:text-white transition-colors">Collection</Link></li>
+                  <li><Link to="/customise" className="text-sm lg:text-base text-white/90 hover:text-white transition-colors">Customise</Link></li>
+                  <li><Link to="/occasions" className="text-sm lg:text-base text-white/90 hover:text-white transition-colors">Occasions & Festivals</Link></li>
+                  <li><Link to="/journal" className="text-sm lg:text-base text-white/90 hover:text-white transition-colors">Journal</Link></li>
+                  <li><Link to="/contact" className="text-sm lg:text-base text-white/90 hover:text-white transition-colors">Contact</Link></li>
+                  <li><Link to="/signin" className="text-sm lg:text-base text-white/90 hover:text-white transition-colors">Sign In</Link></li>
+                  <li><Link to="/delivery" className="text-sm lg:text-base text-white/90 hover:text-white transition-colors">Book a Delivery</Link></li>
+                </ul>
+              </div>
+
+              {/* Column 3: Our Shops */}
+              <div>
+                <h4 className="text-xs tracking-[0.3em] uppercase text-white/70 mb-6">Our Shops</h4>
+                <div className="space-y-6">
+                  <div>
+                    <p className="text-sm lg:text-base font-medium text-white mb-2">Manish Nagar</p>
+                    <p className="text-xs lg:text-sm text-white/80 leading-relaxed">
+                      Shop No 10, 11, Manik Park, opposite Union Bank of India, Santaji Society, Manish Nagar, Somalwada, Nagpur, Maharashtra 440037
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-sm lg:text-base font-medium text-white mb-2">Khamla</p>
+                    <p className="text-xs lg:text-sm text-white/80 leading-relaxed">
+                      Kalash Complex, Gulmohar Hall, Near Gulmohar Hall, Pande Layout, Khamla, Nagpur, Maharashtra
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Column 4: Reach Us */}
+              <div>
+                <h4 className="text-xs tracking-[0.3em] uppercase text-white/70 mb-6">Reach Us</h4>
+                <ul className="space-y-4">
+                  <li>
+                    <a href="tel:+919923106684" className="text-sm lg:text-base text-white/90 hover:text-white transition-colors flex items-center gap-2">
+                      <Phone className="w-4 h-4" /> +91 99231 06684
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://wa.me/919923106684" target="_blank" rel="noreferrer" className="text-sm lg:text-base text-white/90 hover:text-white transition-colors flex items-center gap-2">
+                      <MessageCircle className="w-4 h-4" /> WhatsApp
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://instagram.com/aromaflowerscorner" target="_blank" rel="noreferrer" className="text-sm lg:text-base text-white/90 hover:text-white transition-colors">
+                      @aromaflowerscorner
+                    </a>
+                  </li>
+                  <li className="pt-4">
+                    <div className="flex items-center gap-2 text-xs lg:text-sm text-white/80">
+                      <Clock className="w-4 h-4" />
+                      <span>Open daily · 9:00 AM – 10:00 PM</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Bottom Slogan */}
+            <div className="mt-16 lg:mt-20 pt-10 lg:pt-12 border-t border-white/20 text-center">
+              <p className="font-display text-xl lg:text-2xl text-white font-medium">
+                Best Florist & Event Décor in Nagpur
               </p>
             </div>
           </div>
@@ -121,9 +242,6 @@ export default function Layout({ children }: LayoutProps) {
         >
           <MessageCircle className="w-4 h-4" />
         </a>
-        <span className="text-[9px] tracking-[0.3em] uppercase text-muted-foreground rotate-90 whitespace-nowrap mt-2">
-          Nagpur · Est 2018
-        </span>
       </div>
 
       {/* Mobile bottom bar - 3 columns (the "3-line section") */}
