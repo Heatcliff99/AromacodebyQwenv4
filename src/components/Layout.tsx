@@ -1,91 +1,102 @@
-import { ReactNode } from 'react';
-import { Link } from 'react-router-dom';
-import { Phone, MessageCircle, Sparkles, Clock } from 'lucide-react';
+import { ReactNode, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { Phone, MessageCircle, Sparkles, X, Clock } from 'lucide-react';
 
 interface LayoutProps {
   children: ReactNode;
 }
 
 export default function Layout({ children }: LayoutProps) {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const navLinks = [
+    { to: '/', label: 'Home' },
+    { to: '/shop', label: 'Shop' },
+    { to: '/customise', label: 'Customise' },
+    { to: '/journal', label: 'Journal' },
+    { to: '/occasions', label: 'Occasions' },
+    { to: '/contact', label: 'Contact' },
+  ];
+
   return (
     <>
       <main className="min-h-screen pb-16 lg:pb-0">
-        {children}
+        {/* Hamburger Menu Button - Top Right */}
+        <button
+          onClick={() => setMenuOpen(true)}
+          className="fixed top-5 right-5 z-50 w-11 h-11 rounded-full border border-border bg-background/90 backdrop-blur flex items-center justify-center text-primary hover:bg-secondary/30 transition-colors"
+          aria-label="Open menu"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="4" y1="6" x2="20" y2="6" />
+            <line x1="4" y1="12" x2="20" y2="12" />
+            <line x1="4" y1="18" x2="20" y2="18" />
+          </svg>
+        </button>
 
-        {/* Footer */}
-        <footer className="border-t border-border bg-background">
-          <div className="mx-auto max-w-7xl px-5 lg:px-10">
-            {/* Footer top - navigation links */}
-            <div className="py-12 lg:py-16 grid grid-cols-2 sm:grid-cols-4 gap-8 lg:gap-12">
+        {/* Full-screen Menu Overlay */}
+        {menuOpen && (
+          <div className="fixed inset-0 z-[60] bg-background/98 backdrop-blur-md flex flex-col">
+            {/* Close button */}
+            <button
+              onClick={() => setMenuOpen(false)}
+              className="absolute top-5 right-5 w-11 h-11 rounded-full border border-border bg-background flex items-center justify-center text-primary hover:bg-secondary/30 transition-colors"
+              aria-label="Close menu"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            {/* Menu Content */}
+            <div className="flex-1 flex flex-col items-center justify-center px-6">
               {/* Brand */}
-              <div className="col-span-2 sm:col-span-1">
-                <Link to="/" className="inline-block">
-                  <span className="font-display text-2xl text-primary">Aroma</span>
-                  <p className="text-[9px] tracking-[0.3em] uppercase text-muted-foreground mt-1">Flowers Corner</p>
-                </Link>
-                <p className="mt-4 text-sm text-foreground/60 leading-relaxed max-w-xs">
-                  A women-owned floral atelier in Nagpur. Composed by hand, since 2018.
-                </p>
-              </div>
+              <Link to="/" onClick={() => setMenuOpen(false)} className="mb-10 text-center">
+                <span className="font-display text-3xl text-primary">Aroma</span>
+                <p className="text-[9px] tracking-[0.3em] uppercase text-muted-foreground mt-1">Flowers Corner</p>
+              </Link>
 
-              {/* Shop */}
-              <div>
-                <p className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-4">Shop</p>
-                <ul className="space-y-2.5">
-                  <li><Link to="/shop" className="text-sm text-foreground/70 hover:text-primary transition-colors">All Collections</Link></li>
-                  <li><Link to="/occasions" className="text-sm text-foreground/70 hover:text-primary transition-colors">Hand-Tied Bouquets</Link></li>
-                  <li><Link to="/occasions" className="text-sm text-foreground/70 hover:text-primary transition-colors">Varmalas</Link></li>
-                  <li><Link to="/occasions" className="text-sm text-foreground/70 hover:text-primary transition-colors">Floral Jewellery</Link></li>
-                  <li><Link to="/occasions" className="text-sm text-foreground/70 hover:text-primary transition-colors">Event Décor</Link></li>
-                </ul>
-              </div>
+              {/* Navigation Links */}
+              <nav className="flex flex-col items-center gap-5">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    onClick={() => setMenuOpen(false)}
+                    className={`font-display text-2xl sm:text-3xl transition-colors ${
+                      location.pathname === link.to ? 'text-primary' : 'text-foreground/60 hover:text-primary'
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
 
-              {/* Atelier */}
-              <div>
-                <p className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-4">Atelier</p>
-                <ul className="space-y-2.5">
-                  <li><Link to="/customise" className="text-sm text-foreground/70 hover:text-primary transition-colors">Customise a Bouquet</Link></li>
-                  <li><Link to="/journal" className="text-sm text-foreground/70 hover:text-primary transition-colors">Our Story</Link></li>
-                  <li><Link to="/journal" className="text-sm text-foreground/70 hover:text-primary transition-colors">Artisan's Journal</Link></li>
-                  <li><Link to="/contact" className="text-sm text-foreground/70 hover:text-primary transition-colors">Visit Us</Link></li>
-                  <li><Link to="/contact" className="text-sm text-foreground/70 hover:text-primary transition-colors">Send an Enquiry</Link></li>
-                </ul>
-              </div>
-
-              {/* Contact */}
-              <div>
-                <p className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-4">Contact</p>
-                <ul className="space-y-2.5">
-                  <li>
-                    <a href="tel:+919923106684" className="text-sm text-foreground/70 hover:text-primary transition-colors flex items-center gap-2">
-                      <Phone className="w-3.5 h-3.5" /> +91 99231 06684
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://wa.me/919923106684" target="_blank" rel="noreferrer" className="text-sm text-foreground/70 hover:text-primary transition-colors flex items-center gap-2">
-                      <MessageCircle className="w-3.5 h-3.5" /> WhatsApp
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://instagram.com/aromaflowerscorner" target="_blank" rel="noreferrer" className="text-sm text-foreground/70 hover:text-primary transition-colors">
-                      @aromaflowerscorner
-                    </a>
-                  </li>
-                </ul>
-                <div className="mt-5 flex items-center gap-2 text-xs text-muted-foreground">
+              {/* Bottom info */}
+              <div className="mt-12 flex flex-col items-center gap-3">
+                <div className="flex items-center gap-2 text-xs text-muted-foreground">
                   <Clock className="w-3.5 h-3.5" />
                   <span>Open daily · 9 AM – 10 PM</span>
                 </div>
+                <p className="text-[9px] tracking-[0.3em] uppercase text-muted-foreground">
+                  Nagpur · Est 2018
+                </p>
               </div>
             </div>
+          </div>
+        )}
 
-            {/* Footer bottom */}
-            <div className="border-t border-border py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+        {children}
+
+        {/* Footer - simple, matching original style */}
+        <footer className="border-t border-border mt-0">
+          <div className="mx-auto max-w-7xl px-5 lg:px-10 py-8 lg:py-10">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                <Clock className="w-3.5 h-3.5" />
+                <span>Open daily · 9:00 AM – 10:00 PM</span>
+              </div>
               <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
-                © 2024 Aroma Flowers Corner · Nagpur
-              </p>
-              <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
-                Women-owned · Est 2018
+                © 2024 Aroma Flowers Corner · Nagpur · Women-owned · Est 2018
               </p>
             </div>
           </div>

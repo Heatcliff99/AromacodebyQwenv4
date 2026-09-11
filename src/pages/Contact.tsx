@@ -9,7 +9,7 @@ export default function Contact() {
     <div className="mx-auto max-w-7xl px-5 lg:px-10 pt-12 lg:pt-16 w-full overflow-x-hidden">
       {/* Quick Contact Buttons */}
       <div>
-        <div className="grid sm:grid-cols-3 gap-4 mb-16">
+        <div className="grid sm:grid-cols-3 gap-4 mb-16 pt-4">
           <a
             href="tel:+919923106684"
             className="petal-btn flex items-center justify-center gap-2 border border-border py-5 hover:border-primary transition-colors"
