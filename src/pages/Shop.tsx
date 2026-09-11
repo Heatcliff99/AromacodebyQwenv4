@@ -8,9 +8,10 @@ interface ProductSectionProps {
   description: string;
   products: typeof bouquets;
   linkText: string;
+  linkTo?: string;
 }
 
-function ProductSection({ section, title, description, products, linkText }: ProductSectionProps) {
+function ProductSection({ section, title, description, products, linkText, linkTo = '/customise' }: ProductSectionProps) {
   return (
     <section className="py-10 sm:py-16 lg:py-20 border-b border-border last:border-0">
       <div>
@@ -21,7 +22,7 @@ function ProductSection({ section, title, description, products, linkText }: Pro
             <p className="mt-2 text-sm sm:text-base text-foreground/60 max-w-xl">{description}</p>
           </div>
           <Link
-            to="/customise"
+            to={linkTo}
             className="inline-flex items-center gap-2 text-sm text-primary border-b border-primary pb-0.5 hover:gap-3 transition-all self-start sm:self-end"
           >
             {linkText} <ArrowRight className="w-4 h-4" />
@@ -75,6 +76,7 @@ export default function Shop() {
         description="Composed by hand, wrapped like a gift — for every day and every milestone."
         products={bouquets}
         linkText="Shop Hand-Tied Bouquets"
+        linkTo="/occasions"
       />
       <ProductSection
         section="Section B"
@@ -82,6 +84,7 @@ export default function Shop() {
         description="Wedding garlands of marigold and rose, woven for the day you remember forever."
         products={varmalas}
         linkText="Shop Varmalas"
+        linkTo="/occasions"
       />
       <ProductSection
         section="Section C"
@@ -89,6 +92,7 @@ export default function Shop() {
         description="Hair flowers, hasta phools, maang tikkas — delicate blooms to wear."
         products={jewellery}
         linkText="Shop Floral Jewellery"
+        linkTo="/occasions"
       />
       <ProductSection
         section="Section D"
@@ -96,6 +100,7 @@ export default function Shop() {
         description="Mandap, entrance, stage and car décor — grand florals for grand occasions."
         products={decor}
         linkText="Shop Event Décor"
+        linkTo="/occasions"
       />
 
       {/* CTA */}
@@ -112,12 +117,12 @@ export default function Shop() {
             >
               Build a Custom Bouquet
             </Link>
-            <a
-              href="tel:+919923106684"
+            <Link
+              to="/contact"
               className="petal-btn border border-primary text-primary px-5 sm:px-7 py-3 sm:py-3.5 text-[10px] sm:text-xs tracking-[0.2em] uppercase hover:bg-primary hover:text-primary-foreground transition-colors"
             >
               Send an Enquiry
-            </a>
+            </Link>
           </div>
         </div>
       </section>
