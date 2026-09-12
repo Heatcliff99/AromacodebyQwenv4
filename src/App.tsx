@@ -6,6 +6,7 @@ import Customise from './pages/Customise';
 import Journal from './pages/Journal';
 import Contact from './pages/Contact';
 import Occasions from './pages/Occasions';
+import OwnerDashboard from './pages/OwnerDashboard';
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/journal" element={<Journal />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/occasions" element={<Occasions />} />
+          <Route path="/owner" element={<OwnerDashboard />} />
         </Routes>
       </Layout>
     </Router>
