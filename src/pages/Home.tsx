@@ -240,9 +240,7 @@ export default function Home() {
                 </h3>
                 <span className="text-xs sm:text-sm text-muted-foreground lg:hidden whitespace-nowrap">₹{product.price.toLocaleString()}.00</span>
               </div>
-              {product.originalPrice && (
-                <p className="text-[10px] sm:text-xs text-muted-foreground line-through mt-0.5">₹{product.originalPrice.toLocaleString()}.00</p>
-              )}
+
             </Link>
           ))}
         </div>
@@ -272,7 +270,7 @@ export default function Home() {
         <div className="relative mx-auto max-w-3xl px-4 sm:px-5 py-12 sm:py-16 lg:py-20 text-center text-primary-foreground">
           <div>
             <p className="text-[10px] sm:text-xs tracking-[0.3em] uppercase text-primary-foreground/70 mb-3 sm:mb-4">The Petal & Stem Atelier</p>
-            <h2 className="font-display text-2xl sm:text-4xl lg:text-6xl leading-tight mb-4 sm:mb-6">
+            <h2 className="text-center font-display text-3xl md:text-5xl font-bold leading-tight mb-4 sm:mb-6">
               Become the artist. Compose your own bouquet, bloom by bloom.
             </h2>
             <p className="text-sm sm:text-base text-primary-foreground/80 mb-6 sm:mb-9 max-w-xl mx-auto">
@@ -288,7 +286,71 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Testimonials */}
+      <section className="bg-secondary/15">
+        <div className="mx-auto max-w-4xl px-5 lg:px-10 py-20 lg:py-28 text-center">
+          <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-8">Kind Words</p>
+          <div className="relative min-h-[180px]">
+            <div>
+              <div className="flex justify-center gap-1 mb-5">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />
+                ))}
+              </div>
+              <p className="font-display text-2xl lg:text-3xl text-primary leading-relaxed italic">
+                {testimonials[currentTestimonial].text}
+              </p>
+              <p className="mt-6 text-sm tracking-wide text-foreground/70">
+                {testimonials[currentTestimonial].author} · <span className="text-muted-foreground">{testimonials[currentTestimonial].occasion}</span>
+              </p>
+            </div>
+          </div>
+          <div className="flex justify-center gap-2 mt-8">
+            {testimonials.map((_, i) => (
+              <button
+                key={i}
+                className={`h-1 transition-all duration-500 ${i === currentTestimonial ? 'w-6 bg-primary' : 'w-2 bg-primary/25'}`}
+                onClick={() => setCurrentTestimonial(i)}
+                aria-label={`Testimonial ${i + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
 
+      {/* Instagram Feed */}
+      <section className="mx-auto max-w-7xl px-5 lg:px-10 py-20 lg:py-24">
+        <div>
+          <div className="text-center mb-10">
+            <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-2">From our community</p>
+            <h2 className="font-display text-4xl text-primary">@aromaflowerscorner</h2>
+          </div>
+        </div>
+        <div>
+          <a
+            href="https://instagram.com/aromaflowerscorner"
+            target="_blank"
+            rel="noreferrer"
+            className="grid grid-cols-3 md:grid-cols-6 gap-2"
+          >
+            {instagramImages.map((img, i) => (
+              <div key={i} className="relative aspect-square overflow-hidden bg-muted group">
+                <span className="inline-block relative w-full h-full transition-transform duration-700 group-hover:scale-110">
+                  <img
+                    src={img}
+                    loading="lazy"
+                    className="w-full h-full inset-0 absolute object-cover"
+                    alt="Instagram post"
+                  />
+                </span>
+                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/30 transition-colors flex items-center justify-center">
+                  <Instagram className="w-6 h-6 text-background opacity-0 group-hover:opacity-100 transition-opacity" />
+                </div>
+              </div>
+            ))}
+          </a>
+        </div>
+      </section>
     </div>
   );
 }

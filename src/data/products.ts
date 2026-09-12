@@ -126,28 +126,43 @@ export const testimonials = [
 ];
 
 export const blooms = [
-  { name: 'Sunflower', price: 90, color: '#e8c25a', colors: [{ name: 'Yellow', color: '#e8c25a' }] },
-  { name: 'Tulip', price: 200, color: '#7a1f2b', colors: [{ name: 'Red', color: '#7a1f2b' }, { name: 'Yellow', color: '#e8c25a' }, { name: 'White', color: '#faf7f2' }, { name: 'Mixed', color: '#c97a8a' }], premium: 1500 },
-  { name: 'Lotus', price: 150, color: '#ebcbcb', colors: [{ name: 'Blush Pink', color: '#ebcbcb' }, { name: 'White', color: '#faf7f2' }] },
-  { name: 'Ixora', price: 40, color: '#7a1f2b', colors: [{ name: 'Red', color: '#7a1f2b' }, { name: 'Mixed', color: '#c97a8a' }] },
-  { name: 'Local / Seasonal Flowers', price: 50, color: '#c97a8a', colors: [{ name: 'Mixed', color: '#c97a8a' }] },
-  { name: 'Garden Rose', price: 120, color: '#ebcbcb', colors: [{ name: 'Blush Pink', color: '#ebcbcb' }, { name: 'Red', color: '#7a1f2b' }, { name: 'White', color: '#faf7f2' }, { name: 'Peach', color: '#e8b89a' }, { name: 'Mixed', color: '#c97a8a' }] },
-  { name: 'Red Rose', price: 100, color: '#7a1f2b', colors: [{ name: 'Red', color: '#7a1f2b' }] },
-  { name: 'Pink Rose', price: 100, color: '#ebcbcb', colors: [{ name: 'Blush Pink', color: '#ebcbcb' }] },
-  { name: 'White Lily', price: 140, color: '#faf7f2', colors: [{ name: 'White', color: '#faf7f2' }] },
-  { name: 'Marigold', price: 60, color: '#e8c25a', colors: [{ name: 'Yellow', color: '#e8c25a' }] },
-  { name: 'Yellow Gerbera', price: 70, color: '#e8c25a', colors: [{ name: 'Yellow', color: '#e8c25a' }] },
-  { name: 'Peach Carnation', price: 80, color: '#e8b89a', colors: [{ name: 'Peach', color: '#e8b89a' }] },
-  { name: 'Carnation', price: 80, color: '#ebcbcb', colors: [{ name: 'Blush Pink', color: '#ebcbcb' }, { name: 'Red', color: '#7a1f2b' }, { name: 'White', color: '#faf7f2' }, { name: 'Yellow', color: '#e8c25a' }, { name: 'Peach', color: '#e8b89a' }, { name: 'Mixed', color: '#c97a8a' }] },
-  { name: 'Orchid', price: 220, color: '#7b5a8c', colors: [{ name: 'Purple', color: '#7b5a8c' }, { name: 'White', color: '#faf7f2' }, { name: 'Mixed', color: '#c97a8a' }], premium: 700 },
-  { name: 'Chrysanthemum', price: 60, color: '#e8c25a', colors: [{ name: 'Yellow', color: '#e8c25a' }, { name: 'White', color: '#faf7f2' }, { name: 'Mixed', color: '#c97a8a' }] },
-  { name: 'Tuberose (Rajnigandha)', price: 90, color: '#faf7f2', colors: [{ name: 'White', color: '#faf7f2' }] },
-  { name: 'Jasmine (Mogra)', price: 35, color: '#faf7f2', colors: [{ name: 'White', color: '#faf7f2' }] },
-  { name: 'Gladiolus', price: 110, color: '#7a1f2b', colors: [{ name: 'Red', color: '#7a1f2b' }, { name: 'Blush Pink', color: '#ebcbcb' }, { name: 'White', color: '#faf7f2' }, { name: 'Mixed', color: '#c97a8a' }] },
-  { name: 'Anthurium', price: 180, color: '#7a1f2b', colors: [{ name: 'Red', color: '#7a1f2b' }, { name: 'White', color: '#faf7f2' }], premium: 1000 },
-  { name: 'Bird of Paradise', price: 260, color: '#c97a8a', colors: [{ name: 'Mixed', color: '#c97a8a' }], premium: 1500 },
-  { name: 'Hydrangea', price: 240, color: '#ebcbcb', colors: [{ name: 'Blush Pink', color: '#ebcbcb' }, { name: 'Purple', color: '#7b5a8c' }, { name: 'White', color: '#faf7f2' }], premium: 1500 },
-  { name: 'Peony', price: 300, color: '#ebcbcb', colors: [{ name: 'Blush Pink', color: '#ebcbcb' }, { name: 'White', color: '#faf7f2' }], premium: 2000 },
+  { name: 'Rose', price: 100, color: '#7a1f2b', colors: [{ name: 'Red', color: '#7a1f2b' }, { name: 'Pink', color: '#ebcbcb' }, { name: 'White', color: '#faf7f2' }, { name: 'Yellow', color: '#e8c25a' }, { name: 'Peach', color: '#e8b89a' }], category: 'primary' },
+  { name: 'Carnation', price: 80, color: '#ebcbcb', colors: [{ name: 'Pink', color: '#ebcbcb' }, { name: 'Red', color: '#7a1f2b' }, { name: 'White', color: '#faf7f2' }, { name: 'Yellow', color: '#e8c25a' }, { name: 'Peach', color: '#e8b89a' }], category: 'primary' },
+  { name: 'Lily', price: 140, color: '#faf7f2', colors: [{ name: 'White', color: '#faf7f2' }, { name: 'Pink', color: '#ebcbcb' }, { name: 'Yellow', color: '#e8c25a' }], category: 'primary' },
+  { name: 'Orchid', price: 220, color: '#7b5a8c', colors: [{ name: 'Purple', color: '#7b5a8c' }, { name: 'White', color: '#faf7f2' }, { name: 'Pink', color: '#ebcbcb' }], category: 'primary', premium: 700 },
+  { name: 'Gerbera', price: 70, color: '#e8c25a', colors: [{ name: 'Yellow', color: '#e8c25a' }, { name: 'Orange', color: '#e8b89a' }, { name: 'Pink', color: '#ebcbcb' }, { name: 'Red', color: '#7a1f2b' }], category: 'primary' },
+  { name: 'Chrysanthemum', price: 60, color: '#e8c25a', colors: [{ name: 'Yellow', color: '#e8c25a' }, { name: 'White', color: '#faf7f2' }, { name: 'Pink', color: '#ebcbcb' }], category: 'primary' },
+  { name: 'Marigold', price: 60, color: '#e8c25a', colors: [{ name: 'Yellow', color: '#e8c25a' }, { name: 'Orange', color: '#e8b89a' }], category: 'primary' },
+  { name: 'Tuberose', price: 90, color: '#faf7f2', colors: [{ name: 'White', color: '#faf7f2' }], category: 'primary' },
+  { name: 'Jasmine', price: 35, color: '#faf7f2', colors: [{ name: 'White', color: '#faf7f2' }], category: 'primary' },
+  { name: 'Gladiolus', price: 110, color: '#7a1f2b', colors: [{ name: 'Red', color: '#7a1f2b' }, { name: 'Pink', color: '#ebcbcb' }, { name: 'White', color: '#faf7f2' }], category: 'primary' },
+  { name: 'Anthurium', price: 180, color: '#7a1f2b', colors: [{ name: 'Red', color: '#7a1f2b' }, { name: 'White', color: '#faf7f2' }], category: 'primary', premium: 1000 },
+  { name: 'Hydrangea', price: 240, color: '#ebcbcb', colors: [{ name: 'Pink', color: '#ebcbcb' }, { name: 'Purple', color: '#7b5a8c' }, { name: 'White', color: '#faf7f2' }, { name: 'Blue', color: '#7a8c9e' }], category: 'primary', premium: 1500 },
+  { name: 'Peony', price: 300, color: '#ebcbcb', colors: [{ name: 'Pink', color: '#ebcbcb' }, { name: 'White', color: '#faf7f2' }], category: 'primary', premium: 2000 },
+  { name: 'Sunflower', price: 90, color: '#e8c25a', colors: [{ name: 'Yellow', color: '#e8c25a' }], category: 'primary' },
+  { name: 'Tulip', price: 200, color: '#7a1f2b', colors: [{ name: 'Red', color: '#7a1f2b' }, { name: 'Yellow', color: '#e8c25a' }, { name: 'White', color: '#faf7f2' }, { name: 'Pink', color: '#ebcbcb' }], category: 'primary', premium: 1500 },
+  { name: 'Lotus', price: 150, color: '#ebcbcb', colors: [{ name: 'Pink', color: '#ebcbcb' }, { name: 'White', color: '#faf7f2' }], category: 'primary' },
+];
+
+export const fillers = [
+  { name: 'Baby\'s Breath', price: 50, color: '#faf7f2' },
+  { name: 'Fern', price: 40, color: '#6b8e6b' },
+  { name: 'Eucalyptus', price: 60, color: '#8fa8a8' },
+  { name: 'Money Plant Leaves', price: 30, color: '#6b8e6b' },
+  { name: 'Palm Leaves', price: 35, color: '#6b8e6b' },
+  { name: 'Areca Leaves', price: 35, color: '#6b8e6b' },
+];
+
+export const wrappingOptions = [
+  { name: 'Kraft Paper', price: 50, type: 'bouquet' },
+  { name: 'Tissue Paper', price: 30, type: 'bouquet' },
+  { name: 'Cellophane', price: 40, type: 'bouquet' },
+  { name: 'Fabric Wrap', price: 100, type: 'bouquet' },
+  { name: 'Basket', price: 200, type: 'basket' },
+  { name: 'Vase', price: 300, type: 'vase' },
+  { name: 'Box', price: 250, type: 'box' },
+  { name: 'Traditional Varmala Base', price: 150, type: 'varmala' },
+  { name: 'Floral Jewellery Base', price: 100, type: 'jewellery' },
 ];
 
 export const occasions = [

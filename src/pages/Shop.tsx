@@ -57,9 +57,7 @@ function ProductSection({ section, title, description, products, linkText, linkT
               </h3>
               <span className="text-xs sm:text-sm text-muted-foreground lg:hidden whitespace-nowrap">₹{product.price.toLocaleString()}.00</span>
             </div>
-            {product.originalPrice && (
-              <p className="text-[10px] sm:text-xs text-muted-foreground line-through mt-0.5">₹{product.originalPrice.toLocaleString()}.00</p>
-            )}
+
           </Link>
         ))}
       </div>
