@@ -240,9 +240,7 @@ export default function Home() {
                 </h3>
                 <span className="text-xs sm:text-sm text-muted-foreground lg:hidden whitespace-nowrap">₹{product.price.toLocaleString()}.00</span>
               </div>
-              {product.originalPrice && (
-                <p className="text-[10px] sm:text-xs text-muted-foreground line-through mt-0.5">₹{product.originalPrice.toLocaleString()}.00</p>
-              )}
+
             </Link>
           ))}
         </div>
@@ -272,7 +270,7 @@ export default function Home() {
         <div className="relative mx-auto max-w-3xl px-4 sm:px-5 py-12 sm:py-16 lg:py-20 text-center text-primary-foreground">
           <div>
             <p className="text-[10px] sm:text-xs tracking-[0.3em] uppercase text-primary-foreground/70 mb-3 sm:mb-4">The Petal & Stem Atelier</p>
-            <h2 className="font-display text-2xl sm:text-4xl lg:text-6xl leading-tight mb-4 sm:mb-6">
+            <h2 className="text-center font-display text-3xl md:text-5xl font-bold leading-tight mb-4 sm:mb-6">
               Become the artist. Compose your own bouquet, bloom by bloom.
             </h2>
             <p className="text-sm sm:text-base text-primary-foreground/80 mb-6 sm:mb-9 max-w-xl mx-auto">

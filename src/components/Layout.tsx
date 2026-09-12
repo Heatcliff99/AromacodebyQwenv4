@@ -135,9 +135,9 @@ export default function Layout({ children }: LayoutProps) {
         {children}
 
         {/* Footer - Dark Pink/Magenta Background with Spacious Layout */}
-        <footer className="border-t border-border mt-0" style={{ backgroundColor: '#c2185b' }}>
-          <div className="mx-auto max-w-7xl px-6 lg:px-10 py-16 lg:py-24">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
+        <footer className="w-full bg-[#7a1f2b] text-white py-16 px-8 mt-0">
+          <div className="mx-auto max-w-7xl">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
               {/* Column 1: Brand Info */}
               <div className="space-y-6">
                 <h3 className="font-display text-2xl lg:text-3xl font-bold text-white">Aroma Flowers Corner</h3>
